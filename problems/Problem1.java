@@ -1,6 +1,8 @@
 import java.util.Arrays;
 
 public class Problem1{
+
+    
     // Brute force approach: O(NlogN)
     public static int bruteForceSolution(int arr[], int n){
         // step1: sort an array
@@ -10,6 +12,8 @@ public class Problem1{
         // step3: return max number
         return max;
     }
+
+
     // Optimal approach: O(NlogN)
     public static int optimalSolution(int arr[], int n){
         // step1: assume array first element from the array is the largest element
@@ -22,6 +26,8 @@ public class Problem1{
         }
         return max;
     }
+
+
     public static void main(String[] args) {
         int arr[]={1, 8, 7, 56, 90};
         bruteForceSolution(arr,arr.length);
