@@ -24,10 +24,13 @@ public class Problem2 {
     }
 
 
-    // Optimal approach: O(NlogN)
+    // Optimal approach: O(N)
     public static int optimalSolution(int arr[], int n){
+        // step1: assume secondLargest to -1 [min value]
         int secondLargest=-1;
+        // step2: assume largest  to arr[0]
         int largest=arr[0];
+        // step3: iterate  from 1 to n-1 and if element greater than largest than update secondLargest and largest value . also check if element greater than secondLargest and also less than largest than update smallest varibale
         for(int i=1;i<=n-1;i++){
             if(arr[i]>largest){
                 secondLargest=largest;
@@ -37,7 +40,7 @@ public class Problem2 {
                 secondLargest=arr[i];
             }
         }
-        System.out.println(secondLargest);
+        // step4: return secondLargest
         return secondLargest;
     }
 
