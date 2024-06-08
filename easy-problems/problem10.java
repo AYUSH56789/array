@@ -1,4 +1,4 @@
-public class Problem10 {
+public class problem10 {
 
 
     // brute force approach : time complexity O(N^2) with space complexity : O(1)
