@@ -55,7 +55,7 @@ public class Problem6 {
 }
 
 /*
-Given an integer array nums, rotate the array to the right by k steps, where
+Given an integer array nums, rotate the array to the left by k steps, where
 k is non-negative.
 
 Example 1:
