@@ -1,9 +1,10 @@
-public class problem10 {
+public class Problem10 {
 
 
     // brute force approach : time complexity O(N^2) with space complexity : O(1)
     public static int bruteForceSolution(int arr[]){
         int result=-1;
+        // step1: iterate i from 0 to N and for each i apply linear search if match found than assign isFound->true and break; after that loop if isFound->false than assign result->i and break from outer loop;
         for(int i=0;i<=arr.length;i++){
             boolean isFound=false;
             for(int j=0;j<arr.length;j++){
@@ -17,42 +18,49 @@ public class problem10 {
                 break;
             }
         }
-        System.out.println(result);
+        // step2: return result
         return result;
     }
 
 
-    //optimal approach : time complexity O(2N) with space complexity : O(N)
+    //better approach : time complexity O(2N) with space complexity : O(N)
     public static int betterSolution(int arr[]){
         int result=-1;
+        // step1: create temp array of size arr.length+1
         int temp[]=new int[arr.length+1];
+        // step2: iterate from 0 to arr.length-1 and assign temp[arr[i]]->1
         for (int i = 0; i < arr.length; i++) {
             temp[arr[i]]=1;
         }
+        // step3: now iterate on the temp array from the 0 to temp.length and check if temp[i]==0 than assign result->i
         for(int i=0;i<temp.length;i++){
             if(temp[i]==0){
                 result=i;
             }
         }
-        System.out.println(result);
+        // step4: return result;
         return result;
     }
 
 
-    //optimal approach : time complexity O(N) with space complexity : O(1)
+    //optimal approach1 : time complexity O(N) with space complexity : O(1)
     public static int optimalSolution1(int arr[]){
+        // step1: create n->arr.length and s->0 variable 
         int n=arr.length;
         int s=0;
+        // step2: iterate arr from 0 to arr.length-1 and find sum of all
         for (int i = 0; i < arr.length; i++) {
             s+=arr[i];
         }
+        // step3: calculate total sum for arr.length
         int ts=(n*(n+1))/2;
         System.out.println(ts-s);
+        // step4: ts-s is the result that is our missing value
         return ts-s;
     }
 
 
-    //optimal approach : time complexity O(N) with space complexity : O(1)
+    //optimal approach2 : time complexity O(N) with space complexity : O(1)
     public static void optimalSolution2(int arr[]){
         int xor1=0;
         int xor2=0;

@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class problem8 {
+public class Problem8 {
     // brute force approach : time complexity O(N+M) with space complexity : O(N+M)
     public static ArrayList bruteForceSolution(int arr1[],int arr2[]){
         // step1: create a set from TreeSet<>() -> becuase we want to maintain order in sorted order
