@@ -35,7 +35,7 @@ public class problem8 {
 
     //optimal approach : time complexity O(N+M) with space complexity : O(1)
     public static void optimalSolution(int arr1[],int arr2[]){
-        
+        // pending...
     }
     public static void main(String[] args) {
         int arr1[]={-7, 8};
