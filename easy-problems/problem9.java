@@ -12,9 +12,19 @@ public class problem9 {
         for(int i=0;i<arr1.length;i++){
             for(int j=0;j<arr2.length;j++){
                 if(arr1[i]==arr2[j]){
-                    result.add(arr1[i]);
+                    if (result.size()==0) {
+                        result.add(arr1[i]);
+                    }
+                    else{
+                        if (result.get(result.size()-1)!=arr1[i]) {
+                            result.add(arr1[i]);
+                        }
+                    }
                 }
             }
+        }
+        for (Integer item : result) {
+            System.out.print(item+" ");
         }
         // step3: return result
         return result;
