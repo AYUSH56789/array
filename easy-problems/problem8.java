@@ -6,7 +6,7 @@ import java.util.TreeSet;
 public class problem8 {
 
     
-    // brute force approach : time complexity O(N+M) with space complexity : O(N+M)
+    // brute force approach : time complexity O(O(M log M + N log N)) with space complexity : O(N+M)
     public static ArrayList bruteForceSolution(int arr1[],int arr2[]){
         // step1: create a set from TreeSet<>() -> becuase we want to maintain order in sorted order
         Set<Integer> arraySet=new TreeSet<>();
@@ -25,17 +25,71 @@ public class problem8 {
         while (it.hasNext()){
             result.add(it.next());
         }
-        for (Integer item : result) {
-            System.out.print(item +" ");
-        }
         // step6: return result
         return result;
     }
 
 
-    //optimal approach : time complexity O(N+M) with space complexity : O(1)
-    public static void optimalSolution(int arr1[],int arr2[]){
-        // pending...
+    //optimal approach : time complexity O(N+M) with space complexity : O(N+M)
+    public static ArrayList optimalSolution(int arr1[],int arr2[]){
+        // step1: create n1 and n2 variable for storing arr1 and arr2 length 
+        int n1=arr1.length;
+        int n2=arr2.length;
+        // step2: create two pointer i and j to iterate on array arr1 and arr2
+        int i=0,j=0;
+        // step3: create ArrayList for storing union result
+        ArrayList<Integer> result=new ArrayList<>();
+        // step4: iterate on the arr1 and arr2 simultaneous and check which one is sortest or equal element than store and move ahead else move ahead without storing item in result array.  Note: for first element storing in the result array 
+        while (i<n1 && j<n2) {
+            if(arr1[i]<=arr2[j]){
+                if(result.size()==0){
+                    result.add(arr1[i]);
+                    i++;
+                }
+                else{
+                    if(result.get(result.size()-1)!=arr1[i]){
+                        result.add(arr1[i]);
+                        i++;
+                    }else{
+                        i++;
+                    }
+                }
+            }
+            else{
+                if(result.size()==0){
+                    result.add(arr2[j]);
+                    j++;
+                }
+                else{
+                    if(result.get(result.size()-1)!=arr2[j]){
+                        result.add(arr2[j]);
+                        j++;
+                    }else{
+                        j++;
+                    }
+                }
+            }
+        }
+        // step4: rest element in the arr1 store in the result array by checking duplicates
+        while (i<n1) {
+            if(result.get(result.size()-1)!=arr1[i]){
+                result.add(arr1[i]);
+                i++;
+            }else{
+                i++;
+            }
+        }
+        // step5: rest element in the arr2 store in the result array by checking duplicates
+        while (j<n2) {
+            if(result.get(result.size()-1)!=arr2[j]){
+                result.add(arr2[j]);
+                j++;
+            }else{
+                j++;
+            } 
+        }
+        // step6: return result array
+        return result;
     }
     public static void main(String[] args) {
         int arr1[]={-7, 8};
