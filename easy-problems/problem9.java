@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class problem9 {
 
 
-    //brute force approach : time complexity O(N*M) with space complexity : O(K) , where k may be N{arr1.length} or M{arr2.length} in worst case; 
+    //brute force approach : time complexity O(N*M) with space complexity : O(N) or O(M) , where k may be N{arr1.length} or M{arr2.length} in worst case; 
     public static ArrayList bruteForceSolution(int arr1[],int arr2[]){
         // step1: create arraylist for storing result array{which contain intersection of both};
         ArrayList<Integer> result=new ArrayList<>();
@@ -32,7 +32,7 @@ public class problem9 {
 
 
 
-    //optimal approach : time complexity O(N) with space complexity : O(K) , where k may be N{arr1.length} or M{arr2.length} in worst case
+    //optimal approach : time complexity O(N+M) with space complexity : O(N) or O(M) , where k may be N{arr1.length} or M{arr2.length} in worst case
     public static ArrayList optimalSolution(int arr1[],int arr2[]){
         // step1: create arraylist for storing result array{which contain intersection of both};
         ArrayList<Integer> result=new ArrayList<>();
