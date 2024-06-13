@@ -17,10 +17,10 @@ public class problem13 {
         System.out.println(sLength);
     }
     public static void betterSolution(int arr[],int k){
-// pending
+    // pending
     }
     public static void optimalSolution(int arr[],int k){
-// pending
+    // pending
     }
     public static void main(String[] args) {
         int arr[]= {10, 5, 2, 7, 1, 9};
