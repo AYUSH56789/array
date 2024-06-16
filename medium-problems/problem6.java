@@ -14,12 +14,29 @@ public class problem6 {
             arr[2*i]=positive[i];
             arr[2*i+1]=negative[i];
         }
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
+       for (int i = 0; i < arr.length; i++) {
+           System.out.print(arr[i]+" ");
+       }
     }
-    public static void optimalSolution(int arr[]){
 
+
+    public static void optimalSolution(int arr[]){
+        int ans[]=new int [arr.length];
+        int p=0,n=1;
+        for (int i = 0; i < ans.length; i++) {
+            if(arr[i]>0){
+                ans[p]=arr[i];
+                p=p+2;
+            }
+            else{
+                ans[n]=arr[i];
+                n=n+2;
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < ans.length; i++) {
+            System.out.print(ans[i]+" ");
+        }
     }
     public static void main(String[] args) {
         int arr[]={3,1,-2,-5,2,-4};
